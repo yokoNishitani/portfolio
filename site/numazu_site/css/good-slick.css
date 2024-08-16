@@ -1,0 +1,114 @@
+@charset "UTF-8";
+
+.good-gallery img {
+  width: 500px;
+  height: 394px;
+  margin: 150px auto 0;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.good-choice-btn img {
+  display: block;
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.good-gallery li {
+  list-style: none;
+}
+
+/*選択するサムネイル画像の設定*/
+.good-choice-btn li {
+  cursor: pointer;
+  outline: none;
+  width: 150px !important;
+  border-radius: 10px;
+  list-style: none;
+}
+
+.good-choice-btn li img {
+  opacity: 0.4;
+  /*選択されていないものは透過40%*/
+}
+
+.good-choice-btn li.slick-current img {
+  opacity: 1;
+  /*選択されているものは透過しない*/
+}
+
+.good-choice-btn .slick-track {
+  transform: unset !important;
+  /*画面幅サイズ変更に伴うサムネイル固定*/
+  max-width: 450px;
+}
+
+.good-mainimg-wrap {
+  position: relative;
+}
+
+.good-description {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.80);
+  border-radius: 10px;
+  width: 500px;
+  height: 100px;
+  text-align: center;
+  padding: 10px 5px;
+  line-height: 1.2;
+  text-align: left;
+}
+
+.good-description p:first-child {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+
+
+@media screen and (max-width:600px) {
+  .good-gallery img {
+    width: 300px;
+    height: 236px;
+    margin: 120px auto 0;
+    border-radius: 5px;
+  }
+
+  .good-choice-btn img {
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+  }
+
+  .good-choice-btn li {
+    width: 100px !important;
+  }
+
+  .good-choice-btn .slick-track {
+    transform: unset !important;
+    /*画面幅サイズ変更に伴うサムネイル固定*/
+    max-width: 300px;
+  }
+  
+
+  .good-description {
+    border-radius: 5px;
+    width: 300px;
+    height: 60px;
+    padding: 5px;
+  }
+
+  .good-description p {
+    font-size: 14px;
+  }
+
+  .good-description p:first-child {
+    font-size: 16px;
+  }
+}

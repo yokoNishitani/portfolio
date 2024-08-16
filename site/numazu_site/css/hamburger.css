@@ -1,0 +1,202 @@
+@charset "UTF-8";
+
+/*========= ナビゲーションのためのCSS ===============*/
+/*アクティブになったエリア*/
+#g-nav.panelactive {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+.circle-bg {
+  position: fixed;
+  z-index: 3;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: rgba(57, 74, 143, 0.70);
+  transform: scale(0);
+  top: -50px;
+  left: calc(50% - 50px);
+  transition: all .8s;
+}
+
+.circle-bg.circleactive {
+  transform: scale(50);
+}
+
+#g-nav.panelactive {
+  display: block;
+}
+
+#g-nav ul {
+  display: none;
+}
+
+#g-nav.panelactive ul {
+  display: block
+}
+
+#g-nav.panelactive ul:first-child {
+  margin-top: 80px;
+}
+
+#g-nav.panelactive ul li {
+  animation-name: gnaviAnime;
+  animation-duration: 1s;
+  animation-delay: .2s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@keyframes gnaviAnime {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+#g-nav li {
+  text-align: center;
+  list-style: none;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+#g-nav li a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+  transition: 0.3s ease;
+  font-size: 24px;
+  line-height: 1.6;
+}
+
+#g-nav li a:hover {
+  color: #fde21d;
+}
+
+/*========= ボタンのためのCSS ===============*/
+.openbtn {
+  position: fixed;
+  z-index: 9999;
+  top: 10px;
+  right: 35px;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+}
+
+#g-nav .g-nav-good {
+  text-align: center;
+}
+
+#g-nav .g-nav-good li a {
+  display: inline-block;
+  font-size: 18px;
+  text-align: left;
+  line-height: 0.5;
+}
+
+.openbtn span {
+  display: inline-block;
+  transition: all .4s;
+  position: absolute;
+  left: 10px;
+  height: 3px;
+  border-radius: 2px;
+  background-color: #333;
+  width: 30px;
+}
+
+.openbtn span:nth-of-type(1) {
+  top: 15px;
+}
+
+.openbtn span:nth-of-type(2) {
+  top: 25px;
+}
+
+.openbtn span:nth-of-type(3) {
+  top: 35px;
+}
+
+.openbtn.active span:nth-of-type(1) {
+  top: 18px;
+  left: 10px;
+  transform: translateY(6px) rotate(-45deg);
+  width: 30px;
+  background-color: #fff;
+}
+
+.openbtn.active span:nth-of-type(2) {
+  opacity: 0;
+}
+
+.openbtn.active span:nth-of-type(3) {
+  top: 29px;
+  left: 10px;
+  transform: translateY(-6px) rotate(45deg);
+  width: 30px;
+  background-color: #fff;
+}
+
+@media screen and (max-width:767px) {
+  #g-nav li a {
+    font-size: 18px;
+  }
+
+  #g-nav .g-nav-good li a {
+    font-size: 14px;
+  }
+
+  .openbtn {
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .openbtn span {
+    left: 5px;
+    width: 25px;
+  }
+
+  .openbtn span:nth-of-type(1) {
+    top: 7px;
+  }
+
+  .openbtn span:nth-of-type(2) {
+    top: 17px;
+  }
+
+  .openbtn span:nth-of-type(3) {
+    top: 27px;
+  }
+
+  .openbtn.active span:nth-of-type(1) {
+    top: 10px;
+    left: 5px;
+    width: 25px;
+  }
+
+  .openbtn.active span:nth-of-type(3) {
+    top: 22px;
+    left: 6px;
+    width: 25px;
+  }
+
+  .header-logo {
+    width: 130px;
+    margin-left: 0;
+  }
+}

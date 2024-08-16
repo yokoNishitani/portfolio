@@ -1,0 +1,1440 @@
+@charset "UTF-8";
+
+
+body {
+    color: #333;
+    background-color: rgba(227, 172, 174, 0.4);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 18px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+#header {
+    position: relative;
+}
+
+.main-image-wrap {
+    width: 100%;
+    height: 800px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.message-frame {
+    background: url(../image/frame.png) no-repeat;
+    background-size: contain;
+    width: 512px;
+    height: 370px;
+    position: absolute;
+    top: 270px;
+    left: 200px;
+}
+
+.main-backgroundimage {
+    background: url(../image/lace.png) no-repeat center;
+    background-size: cover;
+    width: 100%;
+    height: 800px;
+    margin-bottom: 60px;
+}
+
+h1 {
+    font-family: 'Aoboshi One', serif;
+    font-size: 80px;
+    color: #302833;
+    position: absolute;
+    top: 160px;
+    left: 150px;
+}
+
+.message {
+    width: 370px;
+    height: 370px;
+    font-size: 30px;
+    text-align: center;
+    position: absolute;
+    top: 400px;
+    left: 265px;
+}
+
+.message p {
+    margin-bottom: 30px;
+}
+
+.openday {
+    font-size: 70px;
+    color: #f16974;
+    font-family: 'Aoboshi One', serif;
+    background: linear-gradient(transparent 10%, #e9dacb 25%);
+    border-radius: 80% 50% 60% 5%/80% 75% 15% 75%;
+    ;
+}
+
+.openday span {
+    font-size: 30px;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.open {
+    font-size: 50px;
+    background: linear-gradient(transparent 30%, #e9dacb 50%);
+    border-radius: 80% 50% 60% 5%/80% 75% 15% 75%;
+    width: 50%;
+    margin: 0 auto;
+}
+
+/* スライドショー start */
+
+.slide-show {
+    position: absolute;
+    top: 200px;
+    right: 150px;
+    width: 35%;
+    height: 450px;
+    overflow: hidden;
+    clip-path: inset(0 round 50px);
+}
+
+.slide-show-image1,
+.slide-show-image2,
+.slide-show-image3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.slide-show-image1 {
+    background-image: url(../image/arumajirotokage.jpg);
+    animation: slide-animation-01 24s infinite;
+}
+
+.slide-show-image2 {
+    background-image: url(../image/futaagohigetokage.jpg);
+    animation: slide-animation-02 24s infinite;
+}
+
+.slide-show-image3 {
+    background-image: url(../image/hinatayoroitokage.jpg);
+    animation: slide-animation-03 24s infinite;
+}
+
+@keyframes slide-animation-01 {
+    0% {
+        opacity: 1;
+        transform: scale(1.0);
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    40% {
+        opacity: 0;
+        transform: scale(1.15);
+    }
+
+    90% {
+        opacity: 0
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1.0);
+    }
+}
+
+@keyframes slide-animation-02 {
+    0% {
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 0;
+        transform: scale(1.1);
+    }
+
+    40% {
+        opacity: 1;
+    }
+
+    60% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 0;
+        transform: scale(1.0);
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes slide-animation-03 {
+    0% {
+        opacity: 0;
+    }
+
+    60% {
+        opacity: 0;
+        transform: scale(1.0);
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1.1);
+    }
+}
+
+/* スライドショー end */
+
+.gnavi {
+    background-color: #302833;
+    padding: 15px;
+    box-sizing: border-box;
+    justify-content: space-evenly;
+    font-size: 25px;
+    display: flex;
+    margin-bottom: 50px;
+}
+
+.gnavi li {
+    margin-bottom: 20px;
+}
+
+/* nav色が変わる＆線が出てくる start */
+
+.gnavi li a {
+    display: block;
+    padding: 20px 30px 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: #f5f5f5;
+    /*線の基点とするためrelativeを指定*/
+    position: relative;
+}
+
+.gnavi li.current a,
+.gnavi li a:hover {
+    color: #ffc1e0;
+}
+
+.gnavi li a::after {
+    content: '';
+    /*絶対配置で線の位置を決める*/
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    /*線の形状*/
+    width: 80%;
+    height: 2px;
+    background: #ffc1e0;
+    /*アニメーションの指定*/
+    transition: all .3s;
+    transform: scale(0, 1);
+    /*X方向0、Y方向1*/
+    transform-origin: left top;
+    /*左上基点*/
+}
+
+/*現在地とhoverの設定*/
+.gnavi li.current a::after,
+.gnavi li a:hover::after {
+    transform: scale(1, 1);
+    /*X方向にスケール拡大*/
+}
+
+/* nav色が変わる＆線が出てくる end */
+
+
+/* ハンバーガーメニューstart */
+
+/*ボタン全体の形状*/
+.openbtn {
+    /*はじめは非表示に*/
+    display: none;
+    /*ボタンの位置*/
+    position: fixed;
+    top: 10px;
+    right: 30px;
+    z-index: 999;
+    /*ボタンの形状*/
+    background: #302833;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    border-radius: 41% 59% 48% 52% / 52% 50% 50% 48%;
+}
+
+/*ボタンのアイコン設定*/
+.openbtn span {
+    display: inline-block;
+    transition: all .4s;
+    position: absolute;
+    left: 17px;
+    height: 3px;
+    border-radius: 2px;
+    background-color: #f5f5f5;
+    width: 45%;
+}
+
+.openbtn span:nth-of-type(1) {
+    top: 18px;
+
+}
+
+.openbtn span:nth-of-type(2) {
+    top: 26px;
+}
+
+.openbtn span:nth-of-type(3) {
+    top: 34px;
+}
+
+/*activeクラスが付与された後のボタンのアイコン設定*/
+.openbtn.active span:nth-of-type(1) {
+    top: 22px;
+    left: 20px;
+    transform: translateY(6px) rotate(-45deg);
+    width: 30%;
+}
+
+.openbtn.active span:nth-of-type(2) {
+    opacity: 0;
+}
+
+.openbtn.active span:nth-of-type(3) {
+    top: 34px;
+    left: 20px;
+    transform: translateY(-6px) rotate(45deg);
+    width: 30%;
+}
+
+/*fadeDownクラスが付与された後のボタンの出現アニメーション設定*/
+.fadeDown {
+    animation-name: fadeDownAnime;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    display: block;
+}
+
+@keyframes fadeDownAnime {
+    from {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*.dnoneクラスがついたヘッダー*/
+#header.dnone {
+    opacity: 1;
+}
+
+/*メニューボタンをクリックした際に付与されるpanelactiveクラスがついたら*/
+#header.dnone.panelactive {
+    opacity: 1;
+    /*不透明にして出現*/
+}
+
+/*==ヘッダーのテキストナビゲーションの形状*/
+.gnavi ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.gnavi ul li a {
+    display: block;
+    text-decoration: none;
+    color: #666;
+    padding: 10px;
+}
+
+/*.doneクラスがついたヘッダーのテキストナビゲーションの形状*/
+#header.dnone .gnavi {
+    /*固定位置にして最背面に*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    /*高さと幅*/
+    width: 100%;
+    height: 11vh;
+    /*天地中央＆テキスト中央揃え*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /*はじめは透過0に*/
+    opacity: 0;
+    transition: all 0.4s;
+}
+
+/*メニューボタンをクリックした際に付与されるpanelactiveクラスがついたナビゲーションの形状*/
+#header.dnone.panelactive .gnavi {
+    opacity: 1;
+    /*不透明に*/
+    z-index: 3;
+    /*最前面に*/
+    background: #302833;
+}
+
+#header.dnone.panelactive .gnavi ul {
+    display: block;
+    /*flexの横並びをblockにして縦並びに*/
+}
+
+/*リストの形状*/
+
+section {
+    position: relative;
+    z-index: 1;
+}
+
+.openbtn:hover {
+    background-color: #ffc1e0;
+    transition: all 0.3s;
+}
+
+/* ハンバーガーメニューend */
+
+main {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-rows: 100px 550px 100px 400px 400px 350px 350px 100px;
+}
+
+/* ページトップボタン start */
+/*リンクの形状*/
+#page-top-btn a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #302833;
+    border-radius: 41% 59% 48% 52% / 52% 50% 50% 48%;
+    width: 60px;
+    height: 60px;
+    color: #f5f5f5;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 0.6rem;
+    transition: all 0.3s;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+#page-top-btn a:hover {
+    background: #ffc1e0;
+}
+
+/*リンクを右下に固定*/
+#page-top-btn {
+    position: fixed;
+    right: 30px;
+    top: 80px;
+    z-index: 2;
+    /*はじめは非表示*/
+    opacity: 0;
+    transform: translateY(100px);
+}
+
+/*　上に上がる動き　*/
+
+#page-top-btn.UpMove {
+    animation: UpAnime 0.8s forwards;
+}
+
+@keyframes UpAnime {
+    from {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ページトップボタン end */
+
+h2 {
+    font-family: 'Klee One', cursive;
+    font-size: 30px;
+    margin-bottom: 40px;
+    padding: 0.2rem;
+    box-sizing: border-box;
+    font-weight: bold;
+    text-align: center;
+}
+
+h2 span {
+    background: linear-gradient(transparent 60%, #ffc1e0 60%);
+    border-radius: 80% 50% 60% 5%/80% 75% 15% 75%;
+}
+
+/* CONCEPT */
+#concept {
+    grid-column: 1/5;
+    grid-row: 2/3;
+    position: relative;
+}
+
+.concept-frame {
+    background-image: url(../image/concept-frame.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 841px;
+    height: 501px;
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+}
+
+.consept-wrap {
+    max-width: 842px;
+    margin: 0 auto;
+}
+
+#concept h2 {
+    position: absolute;
+    top: 125px;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+}
+
+.concept-sentence {
+    line-height: 1.5;
+    position: absolute;
+    top: 225px;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    max-width: 500px;
+}
+
+.concept-p-bold {
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* NEWS */
+#news {
+    grid-column: 1/4;
+    grid-row: 4/5;
+    background-color: #f3f3f3;
+    border-radius: 30px;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 10px 20px 50px 30px;
+}
+
+.news-wrap {
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+#news dl {
+    max-width: 400px;
+}
+
+#news dl dd {
+    margin-bottom: 130px;
+    text-indent: 1rem;
+}
+
+.news-more-info {
+    display: flex;
+    gap: 15px;
+    width: 200px;
+    height: 40px;
+}
+
+.news-more-info p {
+    padding-top: 10px;
+}
+
+.news-wrap a {
+    text-decoration: none;
+    display: inline-block;
+    width: 200px;
+    position: relative;
+}
+
+.news-wrap a:link {
+    color: #333;
+}
+
+.news-wrap a:visited {
+    color: #ffc1e0;
+}
+
+.news-wrap a::after {
+    position: absolute;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: #333;
+    bottom: -1px;
+    /*アンダーラインがaタグの下端から現れる*/
+    transform: scale(0, 1);
+    /*アンダーラインの縮尺比率。ホバー前はx方向に0*/
+    transform-origin: left top;
+    /*変形（アンダーラインの伸長）の原点がaタグ（各メニュー）の左端*/
+    transition: transform 0.3s;
+    /*変形の時間*/
+}
+
+.news-wrap a:hover::after {
+    transform: scale(1, 1);
+    /*ホバー後、x軸方向に1（相対値）伸長*/
+}
+
+/* SYSTEM */
+#system {
+    grid-column: 1/4;
+    grid-row: 5/6;
+    background-color: #f3f3f3;
+    border-radius: 30px;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 10px 20px 50px 30px;
+}
+
+.system-sentence {
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+.system-sentence p {
+    line-height: 1.2;
+    margin-bottom: 30px;
+}
+
+.system-p-small {
+    font-size: small;
+    padding-left: 1em;
+    text-indent: -1em;
+    box-sizing: border-box;
+}
+
+.system-menu-wrap {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 50px;
+    height: 48px;
+    margin-top: 70px;
+}
+
+.system-menu {
+    display: flex;
+    gap: 20px;
+}
+
+.system-menu p {
+    padding-top: 15px;
+    margin: 0;
+}
+
+.system-menu-wrap a {
+    text-decoration: none;
+    position: relative;
+}
+
+.system-menu-wrap a:link {
+    color: #333;
+}
+
+.system-menu-wrap a:visited {
+    color: #ffc1e0;
+}
+
+.system-menu-wrap a::after {
+    position: absolute;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: #333;
+    bottom: -1px;
+    /*アンダーラインがaタグの下端から現れる*/
+    transform: scale(0, 1);
+    /*アンダーラインの縮尺比率。ホバー前はx方向に0*/
+    transform-origin: left top;
+    /*変形（アンダーラインの伸長）の原点がaタグ（各メニュー）の左端*/
+    transition: transform 0.3s;
+    /*変形の時間*/
+}
+
+.system-menu-wrap a:hover::after {
+    transform: scale(1, 1);
+    /*ホバー後、x軸方向に1（相対値）伸長*/
+}
+
+/* CAST */
+#cast {
+    grid-column: 1/4;
+    grid-row: 6/8;
+    background-color: #f3f3f3;
+    border-radius: 30px;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 10px 20px 50px 30px;
+}
+
+.cast-introduction {
+    max-width: 450px;
+    line-height: 1.5;
+    margin: 0 auto 50px;
+}
+
+.cast-flex {
+    display: flex;
+    gap: 70px;
+    margin: 150px auto 0;
+    max-width: 900px;
+}
+
+.cast-flex p {
+    margin-bottom: 20px;
+}
+
+.cast-p-bold {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.cast-sentence {
+    max-width: 450px;
+    line-height: 1.3;
+}
+
+.cast-backnumber {
+    display: flex;
+    gap: 20px;
+    width: 200px;
+    height: 35px;
+}
+
+.cast-backnumber p {
+    padding-top: 8px;
+}
+
+.cast-image img {
+    max-width: 300px;
+    height: auto;
+    border-radius: 50px;
+    filter: drop-shadow(10px 10px 5px rgba(0, 0, 0, .5));
+}
+
+.cast-flex a {
+    text-decoration: none;
+    display: inline-block;
+    width: 200px;
+    position: relative;
+}
+
+.cast-flex a:link {
+    color: #333;
+}
+
+.cast-flex a:visited {
+    color: #ffc1e0;
+}
+
+.cast-flex a::after {
+    position: absolute;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: #333;
+    bottom: -1px;
+    /*アンダーラインがaタグの下端から現れる*/
+    transform: scale(0, 1);
+    /*アンダーラインの縮尺比率。ホバー前はx方向に0*/
+    transform-origin: left top;
+    /*変形（アンダーラインの伸長）の原点がaタグ（各メニュー）の左端*/
+    transition: transform 0.3s;
+    /*変形の時間*/
+}
+
+.cast-flex a:hover::after {
+    transform: scale(1, 1);
+    /*ホバー後、x軸方向に1（相対値）伸長*/
+}
+
+/* ACCESS */
+#access {
+    grid-column: 4/5;
+    grid-row: 4/6;
+    background-color: #f3f3f3;
+    border-radius: 30px;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 10px 30px 50px 20px;
+}
+
+#access dl {
+    margin: 10px;
+    padding-left: 1em;
+    box-sizing: border-box;
+}
+
+#access dl dt {
+    margin-bottom: 5px;
+    text-indent: -1em;
+}
+
+#access dl dd {
+    margin-bottom: 8px;
+}
+
+.access-map {
+    text-align: center;
+    margin-top: 40px;
+}
+
+#access iframe {
+    width: 100%;
+    height: 300px;
+}
+
+/* CONTACT */
+#contact {
+    grid-column: 4/5;
+    grid-row: 6/8;
+    background-color: #f3f3f3;
+    border-radius: 30px;
+    padding: 10px;
+    margin: 10px 30px 50px 20px;
+    box-sizing: border-box;
+}
+
+#contact form dl dt {
+    text-indent: 1rem;
+    margin-bottom: 5px;
+}
+
+#contact form dl dd {
+    text-indent: 2rem;
+}
+
+input[type="text"] {
+    width: 80%;
+    margin-bottom: 15px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+input[type="email"] {
+    width: 80%;
+    margin-bottom: 15px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+textarea {
+    width: 80%;
+    height: 120px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.submit {
+    text-align: center;
+}
+
+input[type="submit"] {
+    padding: 10px 20px;
+    box-sizing: border-box;
+    margin-top: 10px;
+    background-color: #fff;
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #333;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-must {
+    color: #f16974;
+}
+
+/* footer */
+footer {
+    background-color: #302833;
+    height: 300px;
+    position: relative;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.footer-title {
+    font-size: 50px;
+    text-align: center;
+    font-family: 'Aoboshi One', serif;
+    margin-bottom: 30px;
+}
+
+.footer-title a {
+    text-decoration: none;
+}
+
+.footer-title a:link {
+    color: #f5f5f5;
+}
+
+.footer-title a:visited {
+    color: #f5f5f5;
+}
+
+.footer-title a:hover {
+    opacity: 0.5;
+}
+
+.logo-wrap {
+    display: flex;
+    gap: 50px;
+    justify-content: space-evenly;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.logo-box {
+    display: flex;
+    gap: 30px;
+}
+
+.logo-wrap p {
+    color: #f5f5f5;
+    font-size: 20px;
+    padding-top: 10px;
+}
+
+.twitter-logo,
+.insta-logo,
+.fb-logo {
+    width: 40px;
+    height: auto;
+}
+
+.twitter-logo {
+    padding-top: 5px;
+}
+
+.twitter-logo img,
+.insta-logo img,
+.fb-logo img {
+    width: 100%;
+    height: auto;
+}
+
+.logo-wrap a:hover {
+    opacity: 0.5;
+}
+
+.copywriter {
+    font-size: 16px;
+    color: #f5f5f5;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+}
+
+@media screen and (max-width:1360px) {
+    .message-frame {
+        top: 250px;
+        left: 180px;
+    }
+
+    h1 {
+        font-size: 78px;
+    }
+
+    .message {
+        width: 350px;
+        height: 350px;
+        top: 380px;
+        left: 245px;
+    }
+
+    .openday {
+        font-size: 65px;
+    }
+
+    .openday span {
+        font-size: 28px;
+    }
+
+    .open {
+        font-size: 48px;
+    }
+
+    .slide-show {
+        top: 180px;
+        right: 130px;
+        height: 430px;
+    }
+
+}
+
+@media screen and (max-width:1300px) {
+    .message-frame {
+        left: 140px;
+    }
+
+    h1 {
+        font-size: 76px;
+    }
+
+    .message {
+        width: 350px;
+        height: 350px;
+        left: 225px;
+    }
+
+    .openday {
+        font-size: 63px;
+    }
+
+    .openday span {
+        font-size: 26px;
+    }
+
+    .open {
+        font-size: 46px;
+    }
+
+    .slide-show {
+        top: 180px;
+        right: 120px;
+        height: 420px;
+    }
+
+}
+
+@media screen and (max-width:1200px) {
+    .message-frame {
+        top: 270px;
+        left: 130px;
+        width: 450px;
+        height: 325px;
+    }
+
+    h1 {
+        position: static;
+        text-align: center;
+        margin-top: 140px;
+        font-size: 74px;
+    }
+
+    .message {
+        width: 350px;
+        height: 350px;
+        top: 370px;
+        left: 180px;
+    }
+
+    .openday {
+        font-size: 63px;
+    }
+
+    .openday span {
+        font-size: 26px;
+    }
+
+    .open {
+        font-size: 46px;
+    }
+
+    .slide-show {
+        top: 240px;
+        right: 120px;
+        height: 400px;
+    }
+
+    .gnavi {
+        font-size: 20px;
+    }
+
+    .gnavi li a {
+        padding: 15px 15px 0
+    }
+
+    main {
+        grid-template-rows: 100px 550px 100px 400px 400px 350px 350px 760px 100px;
+    }
+
+    #concept {
+        grid-column: 1/5;
+        grid-row: 2/3;
+        margin: 0 30px 60px;
+    }
+
+    #news {
+        grid-column: 1/5;
+        grid-row: 4/5;
+        margin: 0 30px 60px;
+    }
+
+    #system {
+        grid-column: 1/5;
+        grid-row: 5/6;
+        margin: 0 30px 60px;
+    }
+
+    #cast {
+        grid-column: 1/5;
+        grid-row: 6/8;
+        margin: 0 30px 60px;
+    }
+
+    #access {
+        grid-column: 1/3;
+        grid-row: 8/9;
+        margin: 0 15px 60px 30px
+    }
+
+    #contact {
+        grid-column: 3/5;
+        grid-row: 8/9;
+        margin: 0 30px 60px 15px;
+    }
+}
+
+@media screen and (max-width:1100px) {
+    .message-frame {
+        top: 270px;
+        left: 100px;
+        width: 430px;
+        height: 310px
+    }
+
+    .message {
+        width: 300px;
+        height: 300px;
+        top: 370px;
+        left: 160px;
+    }
+
+    .openday {
+        font-size: 55px;
+    }
+
+    .openday span {
+        font-size: 26px;
+    }
+
+    .open {
+        font-size: 40px;
+    }
+
+    .slide-show {
+        top: 260px;
+        height: 350px
+    }
+
+    main {
+        grid-template-rows: 80px 550px 80px 400px 400px 350px 350px 760px 100px;
+    }
+}
+
+
+@media screen and (max-width:1000px) {
+    .message-frame {
+        display: none;
+    }
+
+    .message {
+        position: static;
+        height: 150px;
+        margin: 50px auto 0;
+    }
+
+    .message p {
+        margin-bottom: 15px;
+    }
+
+    .slide-show {
+        position: static;
+        margin: 30px auto 0;
+    }
+
+    .openday {
+        font-size: 55px;
+    }
+
+    .openday span {
+        font-size: 26px;
+    }
+
+    .open {
+        font-size: 40px;
+    }
+
+    .slide-show,
+    .slide-show-image1,
+    .slide-show-image2,
+    .slide-show-image3 {
+        display: none;
+    }
+
+    .max1000px-image {
+        background-image: url(../image/arumajirotokage.jpg);
+        width: 350px;
+        height: 233px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        border-radius: 20px;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width:960px) {
+    main {
+        grid-template-rows: 100px 550px 100px 400px 400px 350px 500px 700px 600px 100px;
+    }
+
+    #access {
+        grid-column: 1/5;
+        grid-row: 8/9;
+        margin: 0 30px 60px;
+    }
+
+
+    #contact {
+        grid-column: 1/5;
+        grid-row: 9/10;
+        margin: 0 30px 60px;
+    }
+
+    #access dl {
+        max-width: 420px;
+        margin: 0 auto;
+    }
+
+    form {
+        max-width: 500px;
+        margin: 0 auto;
+        text-indent: 0;
+    }
+}
+
+@media screen and (max-width:900px) {
+    #header.dnone .gnavi {
+        display: block;
+        height: 65vh;
+    }
+
+    #header.dnone .gnavi a {
+        width: 150px;
+        margin: 0 auto;
+    }
+
+    main {
+        grid-template-rows: 80px 500px 0 400px 400px 350px 500px 760px 600px 100px;
+    }
+
+    .concept-frame {
+        display: none;
+    }
+
+    #concept {
+        background-color: #f3f3f3;
+        border-radius: 30px;
+        padding: 10px;
+        box-sizing: border-box;
+        margin: 0 30px 60px;
+    }
+
+    #concept h2 {
+        position: static;
+        transform: translateX(0);
+    }
+
+    .concept-p-bold {
+        margin-bottom: 50px;
+    }
+
+    .concept-sentence {
+        position: static;
+        transform: translateX(0);
+        margin: 100px auto;
+    }
+
+    .cast-flex {
+        display: block;
+        margin-top: 100px;
+    }
+
+    .cast-image {
+        text-align: center;
+    }
+
+    .cast-sentence-wrap {
+        max-width: 450px;
+        margin: 50px auto 0;
+        box-sizing: border-box;
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width:800px) {
+    main {
+        grid-template-rows: 80px 500px 0 400px 400px 350px 500px 760px 600px 100px;
+    }
+
+}
+
+@media screen and (max-width:700px) {
+    .gnavi {
+        display: none;
+    }
+
+    #header.dnone {
+        opacity: 1;
+    }
+
+    .openbtn {
+        width: 55px;
+        height: 55px;
+    }
+
+    .openbtn span {
+        width: 43%;
+    }
+
+    .openbtn.active span:nth-of-type(1) {
+        top: 18px;
+    }
+
+    .openbtn.active span:nth-of-type(3) {
+        top: 30px;
+    }
+
+    #page-top-btn {
+        top: 75px;
+    }
+
+    #page-top-btn a {
+        width: 55px;
+        height: 55px;
+    }
+
+    main {
+        grid-template-rows: 0 500px 0 400px 400px 350px 500px 760px 600px 100px;
+    }
+}
+
+@media screen and (max-width:600px) {
+    main {
+        grid-template-rows: 0 500px 0 400px 450px 350px 500px 760px 600px 100px;
+    }
+
+    #footer {
+        height: 350px;
+        width: 100%;
+    }
+
+    .twitter-logo,
+    .insta-logo,
+    .fb-logo {
+        margin-bottom: 7px;
+    }
+
+    .copywriter {
+        bottom: 20px;
+    }
+
+}
+
+@media screen and (max-width:550px) {
+    .system-menu-wrap {
+        display: block;
+    }
+
+    .system-menu {
+        max-width: 230px;
+        margin: 0 auto 15px;
+    }
+
+    .logo-wrap {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .logo-wrap p {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .logo-box {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width:500px) {
+    main {
+        grid-template-rows: 0 550px 0 400px 500px 350px 500px 760px 600px 100px;
+    }
+}
+
+@media screen and (max-width:460px) {
+    .max1000px-image {
+        width: 250px;
+        height: 167px;
+    }
+
+    h1 {
+        font-size: 60px;
+    }
+
+    .cast-image img {
+        max-width: 250px;
+    }
+
+    main {
+        grid-template-rows: 0 600px 0 400px 500px 350px 500px 760px 600px 100px;
+    }
+}
+
+:root {
+    --header: 900px;
+    scroll-padding: var(--header);
+}
+
+header {
+    height: var(--header);
+}
