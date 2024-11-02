@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@5.3.6/dist/simplebar.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <!-- 後からstyle2.cssは消す -->
+    <link rel="stylesheet" href="css/style2.css">
     <link rel="icon" href="images/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,21 +38,39 @@
         </div>
     </div>
     <header id="header">
-        <div class="header-top">
+        <div class="header__wrap">
             <a href="#">
-                <div class="header-top-logo"></div>
+                <div class="header__img--logo"></div>
             </a>
-            <nav class="g-nav">
-                <div class="openbtn"><span></span><span></span><span></span></div>
+            <nav id="header__g-nav">
+                <div id="btn__hbg-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
                 <ul>
-                    <li><a href="#about">about me</a></li>
-                    <li><a href="#works">works</a></li>
-                    <li><a href="#contact">contact</a></li>
-                    <li><a href="#">top</a></li>
+                    <li>
+                        <a href="#about">about me</a>
+                    </li>
+                    <li>
+                        <a href="#skills">skills</a>
+                    </li>
+                    <li>
+                        <a href="#works">works</a>
+                    </li>
+                    <li>
+                        <a href="#contact">contact</a>
+                    </li>
+                    <li>
+                        <a href="#">top</a>
+                    </li>
                 </ul>
             </nav>
         </div>
-        <div class="top-wrap">
+    </header>
+
+    <main class="index-main">
+        <div id="mv" class="top-wrap">
             <div class="top-logo-wrap">
                 <div class="top"></div>
                 <div class="top-sp-wrap">
@@ -60,30 +80,92 @@
             </div>
         </div>
         <div class="top-wrap-yellow"></div>
-    </header>
-
-    <main class="index-main">
         <section id="about">
             <h2>about me</h2>
-            <div class="about-wrap">
-                <div class="prof-top">
-                    <div class="prof-img">
-                    </div>
-                    <div class="prof-top-right">
-                        <p>1994/11/23 札幌市出身</p>
-                        <p>
-                            大学卒業(臨床心理学専攻)後、神奈川県湯河原町の旅館や静岡県沼津市のホテルに就職。退職後は札幌にUターンし、2023年6月より職業訓練校・北関東学院「WEBデザインクリエーター科」でHTML/CSS、Photoshop/Illustratorを学習しました。
-                        </p>
-                        <p>
-                            修了後はコールセンターで働きながら、独学でJavaScriptやPHPを学習中。主にLaravelを使用してます。
-                        </p>
-                        <p>
-                            目標はフロントエンドエンジニアやWebデザイナーとして働くことです。見やすい、使いやすいサイト作りを心がけていきたいです。
-                        </p>
-                        <p>作りたいものを「カタチ」にできるまで、粘り強く取り組みます！</p>
-                    </div>
+            <div class="wrap__about">
+                <div class="wrap__img--profile"></div>
+                <div class="wrap__about--right">
+                    <p>1994/11/23 札幌市出身</p>
+                    <p>
+                        大学卒業(臨床心理学専攻)後、神奈川県湯河原町の旅館や静岡県沼津市のホテルに就職。退職後は札幌にUターンし、2023年6月より職業訓練校・北関東学院「WEBデザインクリエーター科」でHTML/CSS、Photoshop/Illustratorを学習しました。
+                    </p>
+                    <p>
+                        修了後はコールセンターで働きながら、独学でJavaScriptやPHPを学習中。
+                    </p>
+                    <p>
+                        目標はフロントエンドエンジニアやWebデザイナーとして働くことです。見やすい、使いやすいサイト作りを心がけていきたいです。
+                    </p>
+                    <p>作りたいものを「カタチ」にできるまで、粘り強く取り組みます！</p>
+                    <p>2024/10 最終更新</p>
                 </div>
             </div>
+        </section>
+
+        <section id="skills">
+            <h2>skills</h2>
+            <ul>
+                <li class="skills__li--flex">
+                    <div class="skills__img--frontend-tools"></div>
+                    <ul>
+                        <li>
+                            <h3>HTML</h3>
+                            <p>基本的なタグを使い、テキストの構造化やリンクの設定、フォームの作成が可能です。</p>
+                        </li>
+                        <li>
+                            <h3>CSS</h3>
+                            <p>基本的なCSSプロパティの利用や、レスポンシブデザイン、簡単なアニメーションの実装が可能です。</p>
+                            <p>
+                                また、SCSS記法で、変数やネストを使用した記述もできます。@mixinを使った実装は現在学習中です。
+                            </p>
+                        </li>
+                        <li>
+                            <h3>JavaScript(jQuery)</h3>
+                            <p>基本的な文法の理解やイベント処理は理解しています。</p>
+                            <p>jQueryを使うことが多いため、JavaScriptでも開発ができるよう学習中です。</p>
+                        </li>
+                    </ul>
+                </li>
+                <li class="skills__li--flex">
+                    <div class="skills__img--backend-tools"></div>
+                    <ul>
+                        <li>
+                            <h3>PHP</h3>
+                            <p>基本的な文法は理解しています。</p>
+                            <p>学習には主にLaravelを使っています。</p>
+                        </li>
+                        <li>
+                            <h3>Laravel<span class="laravel-ver9">(Ver.9)</span></h3>
+                            <p>
+                                基本的なCRUD操作や、Laravel uiを使った認証システム、ミドルウェアの実装が可能です。フォームのバリデーションを使用し、入力の検証を行うことも可能です。
+                            </p>
+                            <p>非同期処理やAPI開発については、内容は理解していますが、実装については学習中です。</p>
+                        </li>
+                        <li>
+                            <h3>MySQL</h3>
+                            <p>Laravelを使用したデータベースの操作をする際に使用しました。</p>
+                            <p>Eloquent ORMを通じてデータの取得、挿入、更新、削除を行い、リレーショナルデータベースの設計や、管理の基本を理解しています。</p>
+                        </li>
+                    </ul>
+                </li>
+                <li class="skills__li--flex">
+                    <div class="skills__img--other-tools"></div>
+                    <ul>
+                        <li>
+                            <h3>Photoshop/Illustrator</h3>
+                            <p>基本的なツールを使い、画像の編集やグラフィックの作成が行えます。</p>
+                        </li>
+                        <li>
+                            <h3>Adobe XD</h3>
+                            <p>シンプルなワイヤーフレームや、コンポーネントを使ったデザインカンプの作成が可能です。</p>
+                            <p>まだ使いこなせていない部分があるため、Udemyで学習中です。</p>
+                        </li>
+                        <li>
+                            <h3>Git</h3>
+                            <p>基本的な操作を理解しており、ローカルリポジトリの作成や、変更のコミット、ブランチを活用した開発を行うことができます。</p>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
         </section>
 
         <section id="works">
@@ -317,7 +399,7 @@
     <script src="https://rawgit.com/kimmobrunfeldt/progressbar.js/master/dist/progressbar.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.26.0/polyfill.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/simplebar@5.3.6/dist/simplebar.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simplebar@5.3.6/dist/simplebar.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 

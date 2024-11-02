@@ -1,0 +1,18 @@
+@mixin titleFont {
+    font-family: atrament-web, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@mixin textFont {
+    font-family: irohamaru, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@mixin imgSize {
+    background: no-repeat center;
+    background-size: contain;
+    width: 260px;
+    height: 260px;
+}
