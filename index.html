@@ -28,13 +28,14 @@
 </head>
 
 <body>
-    <div class="splash-wrap">
-        <div id="splash">
-            <div id="splash_logo"><img src="images/splash-logo.png" alt="logo" class="fadeUp-logo"></div>
+    <div id="loading__wrap">
+        <div id="loading__wrap--logo">
+            <div id="loading__logo">
+                <img src="images/splash-logo.png" alt="logo" class="loading__fadeUp--logo">
+            </div>
         </div>
-        <div id="splash-number">
-            <div id="splash_text"></div>
-            <!--/splash-->
+        <div id="loading__wrap--countUp">
+            <div id="loading__countUp"></div>
         </div>
     </div>
     <header id="header">
@@ -69,17 +70,17 @@
         </div>
     </header>
 
-    <main class="index-main">
-        <div id="mv" class="top-wrap">
-            <div class="top-logo-wrap">
-                <div class="top"></div>
-                <div class="top-sp-wrap">
-                    <div class="top-sp-image"></div>
+    <main id="main__index">
+        <div id="mv">
+            <div class="mv__frame--brack">
+                <div class="mv__wrap--logo">
+                    <div class="mv__top--logo"></div>
+                    <div class="mv__top--sp-logo"></div>
+                    <h1>portfolio</h1>
                 </div>
-                <h1>portfolio</h1>
             </div>
+            <div class="mv__frame--yellow"></div>
         </div>
-        <div class="top-wrap-yellow"></div>
         <section id="about">
             <h2>about me</h2>
             <div class="wrap__about">
@@ -96,7 +97,7 @@
                         目標はフロントエンドエンジニアやWebデザイナーとして働くことです。見やすい、使いやすいサイト作りを心がけていきたいです。
                     </p>
                     <p>作りたいものを「カタチ」にできるまで、粘り強く取り組みます！</p>
-                    <p>2024/10 最終更新</p>
+                    <p>2024/11 最終更新</p>
                 </div>
             </div>
         </section>
@@ -169,12 +170,12 @@
         </section>
 
         <section id="works">
-            <div class="works-bg">
+            <div class="works__bg">
                 <h2>works</h2>
-                <ul class="works-ul">
-                    <li class="box">
-                        <div class="works-wrap">
-                            <div class="works-img-wrap">
+                <ul class="works__ul">
+                    <li class="works__wrap--fadeUp">
+                        <div class="works__wrap">
+                            <div class="works__img">
                                 <a href="site/animal-cafe/" target="_blank">
                                     <div class="works1"></div>
                                     <div class="click-wrap">
@@ -184,10 +185,10 @@
                                     </div>
                                 </a>
                             </div>
-                            <div class="works-description" data-simplebar data-simplebar-auto-hide="false">
+                            <div class="works__description" data-simplebar data-simplebar-auto-hide="false">
                                 <dl>
-                                    <dt class="works-title">架空サイト</dt>
-                                    <dd class="works-title1">「<span>とかげかふぇ</span>」</dd>
+                                    <dt class="works__title">架空サイト</dt>
+                                    <dd class="works__title1">「<span>とかげかふぇ</span>」</dd>
                                     <dt>コンセプト</dt>
                                     <dd>仕事終わり、疲れた心に癒しを与える、ゆっくりくつろげる動物カフェ。</dd>
                                     <dt>ターゲット</dt>
@@ -195,7 +196,7 @@
                                     <dt>制作期間</dt>
                                     <dd>デザイン＋コーディングで7日間</dd>
                                     <dt>こだわり</dt>
-                                    <dd class="obsession">
+                                    <dd class="works__obsession">
                                         <p>全体的にターゲット層を意識した配色やフォントを使いました。また、角丸で柔らかさもだしています。</p>
                                         <p>トップに新規オープンすることを目立たせました。</p>
                                         <p>レスポンシブ対応済み。</p>
@@ -208,7 +209,7 @@
                                     </dd>
                                     <dt>使用ソフト</dt>
                                     <dd>
-                                        <ul class="works-description-ul">
+                                        <ul class="works__description--ul">
                                             <li>Visual Studio Code</li>
                                         </ul>
                                     </dd>
@@ -216,9 +217,9 @@
                             </div>
                         </div>
                     </li>
-                    <li class="box">
-                        <div class="works-wrap">
-                            <div class="works-img-wrap">
+                    <li class="works__wrap--fadeUp">
+                        <div class="works__wrap">
+                            <div class="works__img">
                                 <a href="site/school/index.html" target="_blank">
                                     <div class="works2"></div>
                                 </a>
@@ -228,10 +229,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="works-description" data-simplebar data-simplebar-auto-hide="false">
+                            <div class="works__description" data-simplebar data-simplebar-auto-hide="false">
                                 <dl>
-                                    <dt class="works-title">架空サイト</dt>
-                                    <dd class="works-title2">「<span>北海道札幌飛世高等学校</span>」</dd>
+                                    <dt class="works__title">架空サイト</dt>
+                                    <dd class="works__title2">「<span>北海道札幌飛世高等学校</span>」</dd>
                                     <dt>コンセプト</dt>
                                     <dd>「グローバル」と「多様性」が学べる公立高校。</dd>
                                     <dt>ターゲット</dt>
@@ -239,12 +240,12 @@
                                     <dt>制作期間</dt>
                                     <dd>デザイン＋コーディングで9日間</dd>
                                     <dt>こだわり</dt>
-                                    <dd class="obsession">
+                                    <dd class="works__obsession">
                                         <p>見やすいサイトにすることを心がけました。<br>
                                             複数ページにすることで、1ページあたりのスクロール量を抑えました。</p>
                                         <p>中学生が見そうな「学校の特色」部分は明るめの配色に、保護者が見そうな「学校の概要」は落ち着いた配色にしました。</p>
                                         <p>様々な機能を使うことで、より使いやすく見やすくなると思い、適宜使用しています。</p>
-                                        <ul class="works-description-ul">
+                                        <ul class="works__description--ul">
                                             <li>slick slider</li>
                                             <li>アコーディオン</li>
                                             <li>左側にナビ固定</li>
@@ -252,7 +253,7 @@
                                             <li>フェードアップ</li>
                                             <li>ファビコン</li>
                                         </ul>
-                                        <p class="margin-top">レスポンシブ対応済み。</p>
+                                        <p class="works__margin-top">レスポンシブ対応済み。</p>
                                     </dd>
                                     <dt>コメント</dt>
                                     <dd>
@@ -261,7 +262,7 @@
                                     </dd>
                                     <dt>使用ソフト</dt>
                                     <dd>
-                                        <ul class="works-description-ul">
+                                        <ul class="works__description--ul">
                                             <li>Visual Studio Code</li>
                                             <li>Canva</li>
                                         </ul>
@@ -270,20 +271,20 @@
                             </div>
                         </div>
                     </li>
-                    <li class="box">
-                        <div class="works-wrap">
+                    <li class="works__wrap--fadeUp">
+                        <div class="works__wrap">
                             <div class="works3"></div>
-                            <div class="works-description" data-simplebar data-simplebar-auto-hide="false">
+                            <div class="works__description" data-simplebar data-simplebar-auto-hide="false">
                                 <dl>
-                                    <dt class="works-title">名刺</dt>
-                                    <dd class="works-title3">「<span>my business card</span>」</dd>
+                                    <dt class="works__title">名刺</dt>
+                                    <dd class="works__title3">「<span>my business card</span>」</dd>
                                     <dt>コンセプト</dt>
                                     <dd>
                                         <p>ポートフォリオサイトを紹介する名刺。<br>
                                             初対面の方とお会いするときや、友達にも気軽に渡しやすいものを作りました。</p>
                                     </dd>
                                     <dt>こだわり</dt>
-                                    <dd class="obsession">
+                                    <dd class="works__obsession">
                                         <p>ポートフォリオサイトを紹介する名刺にしようと思ったため、サイトのロゴを表面に、裏面はサイトのQRコードとID、PASSを配置しました。</p>
                                         <p>砂の部分は、ロゴと同じように、45°の角度になるように描きました。</p>
                                     </dd>
@@ -295,7 +296,7 @@
                                     </dd>
                                     <dt>使用ソフト</dt>
                                     <dd>
-                                        <ul class="works-description-ul">
+                                        <ul class="works__description--ul">
                                             <li>Illustrator</li>
                                         </ul>
                                     </dd>
@@ -309,50 +310,48 @@
                 </div>
             </div>
 
-            <div class="sand-frame-wrap">
-                <div id="portfolio">
-                    <div class="sand-frame-top"></div>
-                    <div class="portfolio-obsession-wrap">
-                        <div class="portfolio-obsession">
-                            <p class="portfolio-subtitle">about my portfolio site</p>
-                            <div class="portfolio-description">
-                                <p>第一印象は落ち着いて見られることが多いので、無彩色をベースに作りました。</p>
-                                <p>アクセントカラーの黄色は、「明るい、楽しい、希望」というキーワードを持っており、また「太陽」も連想する色と言われています。<br>
-                                    自分の名前に「陽」が入っており、落ち着いた明度にすることで自分にぴったりな色だと感じました。</p>
-                                <p>works内の作品のサムネイルがカラフルでまとまりがなくなるような感じがしたので、黒い背景することで締まると考えました。</p>
-                                <p>レスポンシブ対応済み。</p>
-                            </div>
-                        </div>
-                        <div class="portfolio-obsession">
-                            <p class="portfolio-subtitle">logo</p>
-                            <div class="portfolio-description">
-                                <img class="portfolio-logo1" src="images/logo-tokei.png" alt="自分のロゴ" width="2116"
-                                    height="604">
-                                <p>自分自身のロゴマークを作りました。</p>
-
-                                <p>シンボルマークは自分のイニシャルのNとYで砂時計を作りました。一部の線を薄いグレーにしてYが見えるようにしてます。<br>
-                                    そのため、ロゴタイプもyは薄いグレーに、他は濃いグレーにしました。<br>
-                                    ロゴタイプのiの点の部分は黒い背景と揃えました。</p>
-
-                                <p>砂時計は、下の部分が過去、真ん中部分が現在、上の部分が未来という意味があるそうです。これまでの自分の経験と、これから経験していくことを層のように積み重ねていきたいという自分の思いを込めました。そのため、砂の部分が層に見えるようデザインしました。
-                                </p>
-                            </div>
-                        </div>
-                        <div class="portfolio-obsession">
-                            <div class="portfolio-description">
-                                <p class="portfolio-subtitle">tools</p>
-                                <p>Visual Studio Code / Photoshop / Illustrator</p>
-                            </div>
+            <div id="portfolio">
+                <div class="portfolio__frame--top"></div>
+                <div class="portfolio__wrap--obsession">
+                    <div class="portfolio__obsession">
+                        <p class="portfolio__subtitle">about my portfolio site</p>
+                        <div class="portfolio__description">
+                            <p>第一印象は落ち着いて見られることが多いので、無彩色をベースに作りました。</p>
+                            <p>アクセントカラーの黄色は、「明るい、楽しい、希望」というキーワードを持っており、また「太陽」も連想する色と言われています。<br>
+                                自分の名前に「陽」が入っており、落ち着いた明度にすることで自分にぴったりな色だと感じました。</p>
+                            <p>works内の作品のサムネイルがカラフルでまとまりがなくなるような感じがしたので、黒い背景することで締まると考えました。</p>
+                            <p>レスポンシブ対応済み。</p>
                         </div>
                     </div>
-                    <div class="sand-frame-bottom"></div>
+                    <div class="portfolio__obsession">
+                        <p class="portfolio__subtitle">logo</p>
+                        <div class="portfolio__description">
+                            <img class="portfolio__img--logo" src="images/logo-tokei.png" alt="自分のロゴ" width="2116"
+                                height="604">
+                            <p>自分自身のロゴマークを作りました。</p>
+
+                            <p>シンボルマークは自分のイニシャルのNとYで砂時計を作りました。一部の線を薄いグレーにしてYが見えるようにしてます。<br>
+                                そのため、ロゴタイプもyは薄いグレーに、他は濃いグレーにしました。<br>
+                                ロゴタイプのiの点の部分は黒い背景と揃えました。</p>
+
+                            <p>砂時計は、下の部分が過去、真ん中部分が現在、上の部分が未来という意味があるそうです。これまでの自分の経験と、これから経験していくことを層のように積み重ねていきたいという自分の思いを込めました。そのため、砂の部分が層に見えるようデザインしました。
+                            </p>
+                        </div>
+                    </div>
+                    <div class="portfolio__obsession">
+                        <div class="portfolio__description">
+                            <p class="portfolio__subtitle">tools</p>
+                            <p>Visual Studio Code / Photoshop / Illustrator</p>
+                        </div>
+                    </div>
                 </div>
+                <div class="portfolio__frame--bottom"></div>
             </div>
         </section>
 
         <section id="contact">
             <h2>contact</h2>
-            <div class="contact-description">
+            <div class="contact__description">
                 <div>
                     <p>下記のフォームを<span>全て</span>ご入力いただき、最後に送信ボタンを押してください。</p>
                 </div>
@@ -362,9 +361,9 @@
             </div>
             <form
                 action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeURu2WHHHLjVKkZZaz6lsiQNlCUYEMnL6zAkcFyzhHs-f8TA/formResponse"
-                method="post" target="_blank">
+                method="post" target="_blank" class="contact__form">
 
-                <dl class="form-dl">
+                <dl>
                     <dt>名前</dt>
                     <dd>
                         <input type="text" name="entry.2005620554" placeholder="田中　太郎" autocomplete="name" required>
@@ -384,15 +383,15 @@
                         <textarea name="entry.839337160" required></textarea>
                     </dd>
                 </dl>
-                <div class="submit">
-                    <button type="submit" class="submit-btn">送信</button>
-                </div>
+                <button type="submit" class="contact__btn--submit">送信</button>
             </form>
         </section>
     </main>
 
     <footer id="footer">
-        <p><small>&copy;2023 yoko nishitani</small></p>
+        <p>
+            <small>&copy;2023 yoko nishitani</small>
+        </p>
     </footer>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>

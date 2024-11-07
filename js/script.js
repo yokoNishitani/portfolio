@@ -15,9 +15,9 @@ $(function() {
 
 	// works-fadein
 	function delayScrollAnime() {
-		var time = 0.5;//遅延時間を増やす秒数の値
+		var time = 0.5;
 		var value = time;
-		$('.works-ul').each(function () {
+		$('.works__ul').each(function () {
 			var parent = this;
 			var elemPos = $(this).offset().top;
 			var scroll = $(window).scrollTop();
@@ -47,23 +47,17 @@ $(function() {
 		})
 	}
 
-	// 画面をスクロールをしたら動かしたい場合
 	$(window).scroll(function () {
 		delayScrollAnime();
 	});
 	// ...........................................................
 
-
-	//logo-splash
 	$(window).on('load', function () {
-		$("#splash").delay(1500).fadeOut('slow');
-		$("#splash_logo").delay(1200).fadeOut('slow');//ロゴを1.2秒（1200ms）待機してからフェードアウト
+		$("#loading__wrap--logo").delay(1500).fadeOut('slow');
+		$("#loading__logo").delay(1200).fadeOut('slow');
 	});
 
-	// ............................................................
-
-	//テキストのカウントアップ-splash
-	var bar = new ProgressBar.Line(splash_text, {
+	var bar = new ProgressBar.Line(loading__countUp, {
 		strokeWidth: 0,
 		duration: 1000,
 		trailWidth: 0,
@@ -88,9 +82,6 @@ $(function() {
 
 	//アニメーションスタート
 	bar.animate(1.0, function () {
-		$(".splash-wrap").delay(500).fadeOut(800);
+		$("#loading__wrap").delay(500).fadeOut(800);
 	});
-
-	// ............................................................
-
 });
