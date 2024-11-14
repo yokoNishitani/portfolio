@@ -301,6 +301,15 @@ a {
   margin-bottom: 8px;
   font-weight: bold;
 }
+#works .works__bg .works__ul li .works__wrap .works__description dl dt a {
+  color: #333;
+}
+#works .works__bg .works__ul li .works__wrap .works__description dl dt a:hover {
+  opacity: 0.5;
+}
+#works .works__bg .works__ul li .works__wrap .works__description dl dt a:visited {
+  color: #813377;
+}
 #works .works__bg .works__ul li .works__wrap .works__description dl dd {
   margin-bottom: 25px;
 }
@@ -359,7 +368,7 @@ a {
   border: #bbb 1px solid;
   margin: 0 auto;
   transition: 0.3s ease;
-  background-image: url(../images/higuma-top.jpg);
+  background-image: url(../images/higuma.png);
 }
 #works .works__bg .works__ul li .works__img .works__img1:hover {
   opacity: 0.5;
@@ -473,6 +482,15 @@ a {
 }
 #portfolio .portfolio__wrap--obsession .portfolio__obsession {
   margin-bottom: 40px;
+}
+#portfolio .portfolio__wrap--obsession .portfolio__obsession p a {
+  color: #333;
+}
+#portfolio .portfolio__wrap--obsession .portfolio__obsession p a:hover {
+  opacity: 0.5;
+}
+#portfolio .portfolio__wrap--obsession .portfolio__obsession p a:visited {
+  color: #813377;
 }
 #portfolio .portfolio__wrap--obsession .portfolio__obsession .portfolio__subtitle {
   font-family: atrament-web, sans-serif;

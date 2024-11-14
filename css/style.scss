@@ -279,6 +279,18 @@ a {
                             dt {
                                 margin-bottom: 8px;
                                 font-weight: bold;
+
+                                a {
+                                    color: $cBlack;
+
+                                    &:hover {
+                                        opacity: $hoverOpacity;
+                                    }
+
+                                    &:visited {
+                                        color: $cPurple;
+                                    }
+                                }
                             }
 
                             dd {
@@ -341,7 +353,7 @@ a {
 
                     .works__img1 {
                         @include mixin.imgWorks;
-                        background-image: url(../images/higuma-top.jpg);
+                        background-image: url(../images/higuma.png);
 
                         &:hover {
                             opacity: $hoverOpacity;
@@ -446,6 +458,20 @@ a {
 
         .portfolio__obsession {
             margin-bottom: 40px;
+
+            p {
+                a {
+                    color: $cBlack;
+
+                    &:hover {
+                        opacity: $hoverOpacity;
+                    }
+
+                    &:visited {
+                        color: $cPurple;
+                    }
+                }
+            }
 
             .portfolio__subtitle {
                 @include mixin.titleFont;
