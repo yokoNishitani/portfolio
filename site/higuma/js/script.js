@@ -1,16 +1,26 @@
 //スクロールすると上部に固定させるための設定を関数でまとめる
 function FixedAnime() {
-	var mainH = $('.g-nav-main').outerHeight(true);
-	var scroll = $(window).scrollTop();
-	if (scroll >= 550){
-			$('.g-nav-main').addClass('fixed');
-		}else{
-			$('.g-nav-main').removeClass('fixed');
-		}
+    var windowWidth = window.innerWidth; // 画面幅を取得
+    if (windowWidth > 767) { // 画面幅が767px以上の場合にのみ処理を行う
+        var scroll = $(window).scrollTop();
+        if (scroll >= 550) {
+            $('#g-nav-main').addClass('fixed');
+        } else {
+            $('#g-nav-main').removeClass('fixed');
+        }
+    } else {
+        $('#g-nav-main').removeClass('fixed'); // 画面幅が767px以下なら固定クラスを解除
+    }
 }
 
+// スクロールイベントでFixedAnimeを実行
 $(window).scroll(function () {
-	FixedAnime();
+    FixedAnime();
+});
+
+// ウィンドウリサイズ時にもFixedAnimeを実行
+$(window).resize(function() {
+    FixedAnime();
 });
 
 // ............................................................
