@@ -12,6 +12,28 @@
     font-style: normal;
 }
 
+@mixin frameBlack($width: 95%, $height: 75vh) {
+    background-color: $cWhite;
+    width: $width;
+    height: $height;
+    border: $cBlack solid 5px;
+    border-radius: 5px;
+    position: absolute;
+    top: 100px;
+    left: 20px;
+    z-index: 1;
+}
+
+@mixin frameYellow($width: 95%, $height: 75vh) {
+    width: $width;
+    height: $height;
+    border: $cYellow solid 5px;
+    border-radius: 5px;
+    position: absolute;
+    top: 130px;
+    right: 20px;
+}
+
 @mixin imgSize {
     background: no-repeat center;
     background-size: contain;
@@ -31,12 +53,12 @@
     transition: 0.3s ease;
 }
 
-@mixin flex {
+@mixin flex($gap: 20px, $maxWidth: 970px, $margin: 0 auto) {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
-    max-width: 970px;
-    margin: 0 auto;
+    gap: $gap;
+    max-width: $maxWidth;
+    margin: $margin;
     align-items: center;
 }
 
@@ -58,4 +80,25 @@
     height: 550px;
     position: absolute;
     z-index: -1;
+}
+
+@mixin hoverUnderLine ($fontSize) {
+    line-height: 1.0;
+    color: $cBlack;
+    font-size: $fontSize;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    transition: .3s;
+}
+
+@mixin hoverUnderLineAfter {
+    width: 0;
+    height: 2px;
+    content: '';
+    background-color: $cYellow;
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+    transition: .3s;
 }
